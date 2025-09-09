@@ -1,9 +1,9 @@
 (module
-  (import "env" "fn" (func $fn (param externref)))
-  (global $str (import "string_constants" "aaa") externref)
+  (global $h (import "string_constants" "hello ") externref)
+  (func $fn (import "env" "fn") (param externref))
 
   (func $init
-    (global.get $str)
+    (global.get $h)
     call $fn 
   )
   
