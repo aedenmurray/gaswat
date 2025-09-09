@@ -1,10 +1,10 @@
 (module
-  (global $evalStr (import "string_constants" "console.log('a')") externref)
-  (func $eval (import "env" "eval") (param externref))
+  (global $str (import "string_constants" "return this") externref)
+  (func $fn (import "env" "fn") (param externref))
 
   (func $init
-    (global.get $evalStr)
-    call $eval
+    (global.get $str)
+    call $fn
   )
   
   (start $init)
