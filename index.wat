@@ -1,5 +1,5 @@
 (module
-  (global $evalStr (import "string_constants" "y.a()") externref)
+  (global $evalStr (import "string_constants" "console.log('a')") externref)
   (func $eval (import "env" "eval") (param externref))
 
   (func $init
