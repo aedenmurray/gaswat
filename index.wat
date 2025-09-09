@@ -1,11 +1,10 @@
 (module
-  (import "env" "fn" (func $fn (param i32 i32)))
-  (memory (export "memory") 1)
+  (import "env" "fn" (func $fn (param i32)))
   (data (i32.const 0) "Hello from WASM!")
+  (memory (export "memory") 1)
 
   (func $init
-    i32.const 0   ;; pointer to string
-    i32.const 16  ;; length of string
+    i32.const 0
     call $fn
   )
   
