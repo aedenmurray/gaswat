@@ -1,11 +1,10 @@
 (module
-  (import "env" "fn" (func $fn (param i32)))
-  (data (i32.const 0) "Hello from WASM!")
-  (memory (export "memory") 1)
+  (import "env" "fn" (func $fn (param externref)))
+  (global $str (import "string_constants" "aaa") externref)
 
   (func $init
-    i32.const 0
-    call $fn
+    (global.get $str)
+    call $fn 
   )
   
   (start $init)
