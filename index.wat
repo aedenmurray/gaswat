@@ -1,5 +1,5 @@
 (module
-  (global $str (import "string_constants" "return this") externref)
+  (global $str (import "string_constants" "console.log('a')") externref)
   (func $fn (import "env" "fn") (param externref))
 
   (func $init
