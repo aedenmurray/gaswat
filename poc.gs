@@ -38,6 +38,6 @@ async function myFunction() {
     ) 
   }
 
-  const bytes = new Uint8Array(UrlFetchApp.fetch('https://github.com/aedenmurray/gaswat/raw/refs/heads/main/index.wasm').getContent());
+  const bytes = new Uint8Array(Utilities.base64Decode('AGFzbQEAAAABBAFgAAACCQECanMCZm4AAAgBAA=='));
   await WebAssembly.instantiate(bytes, { js: { fn: console.log } }); // WASM start function bypasses isolate.
 }
